@@ -6,6 +6,7 @@ import StarOverview from './components/star-overview/star-overview.component';
 import StarDetails from './components/star-details/star-details.component';
 
 import './App.scss';
+import { getSelectedStar } from './utils/stars.utils';
 
 const App = ({
   loading,
@@ -43,7 +44,7 @@ const App = ({
         <StarDetails
           open={!!selectedStar}
           onClose={onClose}
-          selectedStarId={selectedStar}
+          star={getSelectedStar(selectedStar, stars)}
         />
       )}
     </div>
