@@ -7,6 +7,7 @@ import StarDetails from './components/star-details/star-details.component';
 
 import './App.scss';
 import { getSelectedStar } from './utils/stars.utils';
+import Loader from './components/loader/loader.component';
 
 const App = ({
   loading,
@@ -20,17 +21,13 @@ const App = ({
     fetchStarsStartAsync();
   }, [fetchStarsStartAsync]);
 
-  if (loading) {
-    return <div></div>;
-  }
-
   const onClose = () => setStar(null);
 
   return (
     <div className='app'>
       <h3 className='app-title'>Futurama Stars</h3>
       <div className='stars-container'>
-        {stars &&
+        {stars ? (
           stars.map(({ name, images, id }) => (
             <StarOverview
               name={name}
@@ -38,7 +35,10 @@ const App = ({
               imageUrl={images && images.main}
               onClick={() => setStar(id)}
             />
-          ))}
+          ))
+        ) : (
+          <Loader />
+        )}
       </div>
       {selectedStar && (
         <StarDetails

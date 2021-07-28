@@ -24,7 +24,7 @@ const StarDetails = ({ open, onClose, star }) => {
     }
 
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  });
 
   const {
     images,
