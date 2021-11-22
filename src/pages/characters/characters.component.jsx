@@ -1,23 +1,30 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Slider from 'react-slick';
 
-import { fetchStarsStartAsync, setStar } from '../../redux/star/star.actions';
+import { fetchStarsStartAsync } from '../../redux/star/star.actions';
+import bgImage from '../../assets/bg-image-decaf.png';
 
 import './characters.styles.scss';
+import { sliderConfig } from '../../utils/slider.utils';
+import CharacterSquare from '../../components/characters/character-square/character-square.component';
 
-const Characters = ({
-  stars,
-  loading,
-  selectedStar,
-  setStar,
-  fetchStarsStartAsync,
-}) => {
+const Characters = ({ stars, loading, selectedStar, fetchStarsStartAsync }) => {
   useEffect(() => {
     //fetch charcters from the fetchStarsAsync service
     fetchStarsStartAsync();
   }, [fetchStarsStartAsync]);
 
-  return <div></div>;
+  return (
+    <section
+      className='characters'
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <Slider className='c-slider' {...sliderConfig}>
+        {stars && stars.map((star) => <CharacterSquare character={star} />)}
+      </Slider>
+    </section>
+  );
 };
 
 const mapStateToProps = (state) => ({
@@ -28,7 +35,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchStarsStartAsync: () => dispatch(fetchStarsStartAsync()),
-  setStar: (id) => dispatch(setStar(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Characters);

@@ -1,5 +1,5 @@
 import bgImage from '../../assets/bg-image.png';
-import ExploreButton from './explore-button/explore-button.component';
+import ExploreButton from '../../components/welcome/explore-button/explore-button.component';
 
 import './welcome.styles.scss';
 

@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wb-btn-outer {
+  @extend .flex;
+  width: 450px;
+  height: 130px;
+  background-color: $yellow;
+  box-shadow: 12px 18px 0px #000000;
+  border-radius: 150px;
+  margin-bottom: 100px;
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 4px 4px 0px #ac3035;
+  color: white;
+
+  .wb-inner {
+    @extend .flex;
+    width: 418px;
+    height: 102px;
+    background-color: $red;
+    box-shadow: inset -7px -10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 150px;
+  }
+}
