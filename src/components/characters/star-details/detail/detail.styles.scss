@@ -1,0 +1,20 @@
+@import '../../../../styles/colors.scss';
+
+.sd-grid-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $red;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  
+  .sdg-key {
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+
+  .sdg-value {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}

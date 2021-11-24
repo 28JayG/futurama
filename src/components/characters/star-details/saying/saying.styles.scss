@@ -1,0 +1,13 @@
+.sd-saying {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 20px;
+  box-shadow: inset 0px 3px 3px #d9d6cd;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-color: #e3e0d7;
+
+  @media screen and (max-width: 640px) {
+    font-size: 14px;
+  }
+}

@@ -5,11 +5,13 @@
   background-size: cover;
   background-position: top;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .c-slider {
     max-width: 1200px;
     width: 90%;
+    padding: 20px;
   }
 }

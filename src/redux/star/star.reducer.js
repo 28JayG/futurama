@@ -3,7 +3,7 @@ import StarActionTypes from './star.types';
 const INITIAL_STATE = {
   loading: false,
   stars: null,
-  selectedStar: null,
+  selectedStar: 1,
   error: null,
 };
 
